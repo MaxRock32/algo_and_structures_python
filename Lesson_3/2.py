@@ -5,3 +5,20 @@
 (или 0, 3, 4, 5 - если индексация начинается с нуля),
 т.к. именно в этих позициях первого массива стоят четные числа.
 """
+
+import random
+
+k = 0
+array = []
+array_even = []
+
+for i in range(0, 10):
+    array.append(random.randint(1, 20))
+
+for i in array:
+    if i % 2 == 0:
+        array_even.append(k)
+    k += 1
+
+print(array)
+print(array_even) 
