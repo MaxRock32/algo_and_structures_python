@@ -5,3 +5,29 @@
 вывести наименования предприятий, чья прибыль выше среднего и отдельно
 вывести наименования предприятий, чья прибыль ниже среднего.
 """
+
+companys = {}
+n = int(input("Количество предприятий: "))
+s = 0
+for i in range(n):
+    compname = input(f'Наименование {i + 1}-го предприятия: ')
+    profits = 0
+    for j in range(4):
+        profit = int(input(f'Прибыль в {j + 1}-м квартале: '))
+        profits += profit
+
+    companys[compname] = profits
+    s += profits
+
+avrg = s / n
+print(f'\nСредняя прибыль предприятий за год: {avrg}.')
+
+print('Предприятия с годовой прибылью ниже среднего: ')
+for i in companys:
+    if companys[i] < avrg:
+        print(i)
+
+print('Предприятия с годовой прибылью выше среднего: ')
+for i in companys:
+    if companys[i] > avrg:
+        print(i)
