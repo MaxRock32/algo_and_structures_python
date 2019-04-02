@@ -3,3 +3,24 @@
 цифр и вывести на экран. Например, если введено число 3486,
  то надо вывести число 6843.
 """
+# С помощью рекурсии
+def reverse(n, m):
+    if n == 0:
+        return m
+    else:
+        return reverse(n // 10, m * 10 + n % 10)
+
+
+n = int(input("Введите число: "))
+m = 0
+print(f"Recursion: {n} -> {reverse(n, m)}")
+
+
+# с помощью цикла
+a = int(input("Введите число: "))
+b = 0
+while a > 0:
+    b = b * 10 + a % 10
+    a = a // 10
+
+print(b)
